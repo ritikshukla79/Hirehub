@@ -1,0 +1,80 @@
+
+<div class="joblistheader">
+    <p class="headertext">  Your Posted  Jobs </p>
+</div>
+<div class="joblistbody">
+  <input type="search" placeholder="Keyword: Designation" #namesk id="namesearch" >
+  <input type="search" placeholder="Location: City" #locationsk id="locationsearch">
+  <button id="btn1" (click)="searchnam(namesk.value, locationsk.value)"> Filter</button>
+</div>
+
+
+
+  <div  class="mainbody" style="margin-left: 0rem;width:80%;text-align: center;" *ngIf="myjobposted.length==0">
+
+    <h3 style="text-align: center;">You have not Posted any job yet</h3>
+  </div>
+ 
+ <div *ngFor="let x of myjobposted | paginate: {itemsPerPage: tablesize, currentPage: p, totalItems: count }"> 
+  <div class="mainbody">
+  <div class="card" style="width: 1300px;height:8rem;margin-left: 14rem;">
+    <img id ="companylogo" src="{{x.img_url}}">
+    <div class="companyname">
+        <p style="font-weight:800 ;"> <b style="font-size: 1.2rem; " >{{x.job_title}}</b><br/>
+          {{x.company}}</p>    
+    </div>
+   
+        <button id="btn2"> {{x.category}}</button>
+
+        <!-- <div class="companyname">
+          <p style="font-weight:800 ; "> <b style="font-size: 1.2rem; " >{{x.job_title}}</b><br/>
+            {{x.company}}</p>    
+      </div> -->
+        <div id="duration">
+        <p style="font-weight: 400;margin-top: 45px;"> {{x.typeofjob}} <br/>  <i class='fa-solid fa-location-dot' style='color: #26AE68;'></i>  {{x.location | uppercase}}</p>
+        </div>
+        <p id="package"> {{x.package}} LPA</p>
+        <button id="btn3" routerLink="/applicant" [queryParams]="{category: x.category, job_id:x.job_id }"> View Applications </button>
+
+    
+
+    <button id="viewapp"  routerLink="/selected" [queryParams]="{job_id:x.job_id }"> View selected Candidate </button>
+
+    <!-- <button id="viewhold" routerLink="/pending" [queryParams]="{ job_id:x.job_id }"> View Pending Candidate </button> -->
+
+    <!-- <img  id="deljob" src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg" (click)="deletejob(x.id)" style="width:3%;height:auto;">
+ -->
+
+</div>  
+
+ </div>
+
+</div>
+
+
+
+
+<div class="justify-content-center pag">
+  <pagination-controls previousLabel="Prev" nextLabbel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div>
+
+
+<!-- <nav aria-label="Page navigation example" >
+    <ul class="pagination " >
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only" >Previous</span>
+        </a>
+      </li>
+      <li class="page-item" ><a class="page-link" href="#" >1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+</nav> -->

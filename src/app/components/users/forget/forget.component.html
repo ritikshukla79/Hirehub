@@ -1,0 +1,174 @@
+<!-- <div *ngIf = "dsp == 0">
+    <div style="margin-left: 35em; margin-top: 10rem;margin-right: 35rem;height : 30rem;;">
+        <i class="fa fa-key fa-2x"
+            style="margin-left: 24rem; margin-top: 5rem;color: #26AE61; background-color: rgb(180, 237, 187); border-radius: 1.7rem; padding : 0.75rem;"
+            aria-hidden="true"></i>
+        <br><br><br>
+        <h3 style="margin-left: 18rem;margin-bottom: 0.8rem;;">Forgot Password?</h3>
+        <b style="margin-left: 14rem; color: rgb(146, 143, 143);;">No worries, we'll help you to reset the password</b>
+        <br><br>
+
+        <div *ngIf = "error == 1" style = "color: red; margin-left: 17rem;;">Sorry !! this email id is not registered</div>
+
+        <label style="margin-left: 14rem; ">Email</label><br>
+        <form [formGroup]="form">
+
+
+            <div class="form-group">
+
+                <input type="text" class="form-control" formControlName="email" class = "input-field" 
+                    style="margin-left: 14rem; width : 23rem; height: 2.7rem; border-radius: 6px; border: 2px solid rgb(190, 187, 187); padding: 1rem;  outline: none;;"
+                    placeholder="Enter your email">
+
+            </div>
+
+
+
+
+            <br>
+            <button type="button" class="btn-class" (click)="getemail(form.value)">Reset Password</button>
+
+        </form>
+
+        <br><br>
+        <button style="margin-left: 21rem; background-color: white; border: 0px;" (click)="backtologin();">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to login
+
+        </button>
+    </div>
+
+</div>
+<div *ngIf="dsp == 1">
+    <div style="margin-left: 35em; margin-top: 10rem;margin-right: 35rem;height : 30rem;;">
+        <i class="fa fa-envelope fa-2x" aria-hidden="true"
+            style="margin-left: 24rem; margin-top: 5rem;color: #26AE61; background-color: rgb(180, 237, 187); border-radius: 1.7rem; padding : 0.75rem;"
+            aria-hidden="true"></i>
+        <br><br>
+        <h3 style="margin-left: 18rem;margin-bottom: 0.8rem;;">Check your email</h3>
+        <b style="margin-left: 13.3rem; color: rgb(146, 143, 143);;">We sent a 6 digit otp to confirm your email
+            address</b><br><br>
+            <div *ngIf = "error == 2" style="color: red; margin-left : 22.3rem;">Incorrect OTP !!</div>
+
+            <label style="margin-left: 14rem; ">OTP</label><br>
+        <form [formGroup]="form1">
+
+
+            <div class="form-group">
+
+                <input type="text" class="form-control" formControlName="otp" class = "input-field"
+                    style="outline : none; margin-left: 14rem; width : 23rem; height: 2.7rem; border-radius: 6px; border: 2px solid rgb(190, 187, 187); padding: 1rem;;"
+                    placeholder="Enter otp">
+
+            </div>
+
+
+
+
+            <br>
+            <button type="button" class="btn-class" (click)="userotp(form1.value)">Submit</button><br><br>
+            <b style="margin-left : 16.4rem; color : rgb(167, 162, 162);;">Didn't receive the email?</b>
+            <button type="text" style="background-color: white; color: #26AE61; border: 0px; margin-left: 0.4rem;;"
+                (click)="resendotp();">Click to resend</button>
+
+        </form>
+
+        <br>
+        <button style="margin-left: 21rem; background-color: white; border: 0px;" (click)="backtologin();">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to login
+
+        </button>
+    </div>
+
+</div>
+
+<div *ngIf="dsp == 2">
+    <div style="margin-left: 35em; margin-top: 10rem;margin-right: 35rem;height : 50rem;">
+
+        <i class="fa fa-key fa-2x" aria-hidden="true"
+            style="margin-left: 24rem; margin-top: 5rem;color: #26AE61; background-color: rgb(180, 237, 187); border-radius: 1.7rem; padding : 0.75rem;"
+            aria-hidden="true"></i>
+        <br><br>
+
+        <h3 style="margin-left: 18rem;margin-bottom: 0.8rem;;">Set new password</h3>
+        <b style="margin-left: 16rem; color: rgb(146, 143, 143);;">Hey, now you can change the password</b><br><br>
+        <form [formGroup]="form2">
+
+            <div *ngIf = "error == 3" style="color: red; margin-left : 20.6rem;">Password didn't match !!</div>
+            <div *ngIf = "error == 4" style="color: red; margin-left : 11rem;">Current passworrd should be different than previous password !!</div>
+            <br>
+
+            <div class="form-group">
+                <label style="margin-left: 14rem;">Enter new password</label>
+                
+                    <input type="password" id="password"class="form-control" formControlName="pass1" [type]="eye1 == false ? 'password' : 'text'"
+                    class = "input-field" style="border-right: 0px; border-top-right-radius: 0px;border-bottom-right-radius: 0px;">
+
+                    <span class="showhide" style="border-left : 0px ;border-top-left-radius: 0px;border-bottom-left-radius: 0px;">
+                
+                        <span *ngIf="eye1 == false" (click)="showpass(eye1, 'one')"><i class="fa fa-eye-slash class2"
+                                aria-hidden="true"></i></span>
+                        <span *ngIf="eye1 == true" (click)="showpass(eye1, 'one')" style="padding-right : 2px;"><i class="fa fa-eye class2"
+                                aria-hidden="true"></i></span>
+        
+                    </span>
+               
+                    <b style="font-weight: 560; color:rgb(146, 143, 143); margin-left: 14rem;">Must be atleast 8
+                    characters</b>
+                        <br><br>
+            </div>
+            <div class="form-group">
+                <label style="margin-left: 14rem;margin-top: 1rem;">Confirm new password</label>
+                <input type="password" id="password"class="form-control" formControlName="pass2" [type]="eye2 == false ? 'password' : 'text'"
+                    class = "input-field" style="border-right: 0px; border-top-right-radius: 0px;border-bottom-right-radius: 0px;">
+
+
+
+
+
+                    <span class="showhide" style="border-left : 0px ;border-top-left-radius: 0px;border-bottom-left-radius: 0px;">
+                        <span *ngIf="eye2 == false" (click)="showpass(eye2, 'two')"><i class="fa fa-eye-slash class2"
+                                aria-hidden="true"></i></span>
+                        <span *ngIf="eye2 == true" (click)="showpass(eye2, 'two')" style="padding-right : 2px;"><i class="fa fa-eye class2"
+                                aria-hidden="true"></i></span>
+        
+                    </span>
+            </div>
+
+            <br>
+
+
+            <button type="button" class="btn-class" style="margin-top: 1rem;;" (click)="submitpass(form2.value)"
+                style="width:23.4rem;">Submit</button><br>
+
+        </form>
+
+        <br>
+        <button style="margin-left: 21rem; background-color: white; border: 0px;" (click)="backtologin();">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to login
+
+        </button>
+    </div>
+
+</div>
+<div *ngIf="dsp == 3">
+    <div style="margin-left: 35em; margin-top: 10rem;margin-right: 35rem;height : 50rem;">
+
+        <i class="fa fa-check-circle fa-2x" aria-hidden="true"
+            style="margin-left: 24rem; margin-top: 5rem;color: #26AE61; background-color: rgb(180, 237, 187); border-radius: 1.7rem; padding : 0.75rem;"
+            aria-hidden="true"></i>
+        <br><br>
+        <h3 style="margin-left: 18rem;margin-bottom: 0.8rem;;">Password Reset!!</h3>
+        <b style="margin-left: 15.5rem; color: rgb(146, 143, 143);;">Your password has been successfully reset</b> <br>
+        <br>
+
+
+        <button type="button" class="btn-class" style="margin-top: 1rem;;" (click)="changesuccessful()"
+            style="width:23.4rem;">Continue</button><br>
+
+
+        <br>
+
+
+    </div>
+
+</div> -->

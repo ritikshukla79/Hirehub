@@ -1,0 +1,100 @@
+.companydetails{
+    width: 100%;
+    background-color: whitesmoke;
+    height:300px;
+    position: relative;  
+    background-image: url('https://preview.uideck.com/items/thehunt/assets/img/banner1.jpg');
+
+}
+
+.subdetails{
+    margin-left: 30rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 30px;
+}
+.Salary{
+   position: absolute;
+   top:61%;
+   right:13%;
+   background-color: #26AE61;
+   width:100px;
+   height: 90px;
+   text-align: center;
+   color: white;
+   border-radius: 1rem;
+   
+
+}
+#companylogo{
+    width: 110px;
+    height:90px;
+    left: 19%;
+    position: absolute;
+    bottom: 30px;
+      
+}
+.job-description{
+    margin-top: 1.5rem;
+    margin-left: 22rem;
+    width: 40%;
+    height: 700px;
+    position: relative;
+    box-shadow: 10px 10px 10px 10px rgb(247, 243, 243);
+    margin-bottom: 2rem;
+
+}
+.tags{
+    position: absolute;
+    bottom: 21%;
+    margin-left: 2rem;
+}
+#desc{
+    margin-left: 2rem;
+}
+.company_url{
+    margin-left: 2rem;
+    position: absolute;
+    bottom: 30%;
+}
+.map{
+    width:25%;
+    height: 700px;
+    position: absolute;
+    top:32%;
+    right:13%;
+    margin-top: 1.5rem;
+    box-shadow: 10px 10px 10px 10px  rgb(247, 243, 243);
+    
+}
+#btn1{
+    position: absolute;
+    bottom:20px;
+    opacity: 0.8;
+    margin-left: 2rem;
+    background-color:  #26AE61;
+    color:white;
+    border: 1px solid whitesmoke;
+    border-radius: 5rem;
+    width:120px;
+    height: 50px;
+
+
+}
+#btn1:hover{
+    opacity: 1;
+}
+#skilltag{
+    
+    
+    color: #26AE61;
+    text-align: center;
+    display: flex;
+    
+}
+#btnskill{
+    margin-right: 1rem;
+    border-radius: 4rem;
+   
+}

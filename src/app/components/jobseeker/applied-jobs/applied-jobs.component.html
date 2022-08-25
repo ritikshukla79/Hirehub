@@ -1,0 +1,40 @@
+
+<div class="appliedjobheader">
+    <p class="headertext">  Your Applied Jobs </p>
+</div>
+
+<div class="mainbody" >
+ 
+  <div > 
+    <div class="card" style="width:70rem;height:8rem;" *ngFor="let x of appliedjob | paginate: {itemsPerPage: tablesize, currentPage: p, totalItems: count }">
+  
+        <img id ="companylogo" src="{{x.img_url}}">
+        <div class="companyname">
+            <p style="font-weight:800 ; " > <b style="font-size: 1.2rem; " > {{x.job_title}} </b><br/>
+              {{x.company}}</p>    
+        </div>
+      
+            <button id="btn2"> {{applied}}</button>
+            <div class="location">
+                <i class='fa-solid fa-location-dot' style='color: #26AE61;'></i> <span style="font-weight: 300;"> {{x.location}} </span> &nbsp;
+              
+            </div>
+            <p id="duration"> {{x.typeofjob}}  </p>
+            <div id="btn3" style="color: orange;"  > On Hold </div>
+            <div *ngFor="let i of Status"> 
+              
+              <div id="btn3" style="color: red;" *ngIf="i.accept == '0' && i.job_id == x.job_id "> Rejected </div>
+              <div id="btn3" style="color: #26AE61;" *ngIf="i.accept == '1' && i.job_id == x.job_id "> Accepted </div>
+             
+            </div>
+            
+              
+    </div>
+    
+</div>  
+
+</div>
+
+<div class="d-flex justify-content-center pag">
+  <pagination-controls previousLabel="Prev" nextLabbel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div> 

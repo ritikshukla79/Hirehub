@@ -1,0 +1,15 @@
+.Signheader{
+    width: 100%;
+    background-color: whitesmoke;
+    height:250px;
+    position: relative;  
+    background-image: url('https://preview.uideck.com/items/thehunt/assets/img/banner1.jpg');
+}
+.headertext{
+  position: absolute;
+  bottom: 20%;
+  right:45%;
+  font-size:x-large;
+  font-weight: 700;
+
+}

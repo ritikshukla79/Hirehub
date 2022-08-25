@@ -1,0 +1,99 @@
+
+.main{
+    width:94%;;
+    display: flex;
+    margin-left: 100px;
+    margin-bottom: 500px;
+}
+.inner-section{
+    background-size: 55%;
+    background-color: #fdfdfd;
+    float:left;
+    padding: 50px 0px;
+    width: 55%;
+    margin-left: 505px;
+   /* background: url("/home/manshi.mishra/Downloads/logo.jpg") no-repeat left; */
+
+}
+.Signheader{
+    width: 100%;
+    background-color: whitesmoke;
+    height:250px;
+    position: relative;  
+    background-image: url('https://preview.uideck.com/items/thehunt/assets/img/banner1.jpg');
+}
+.headertext{
+  position: absolute;
+  bottom: 20%;
+  right:50%;
+  font-size:x-large;
+  font-weight: 700;
+
+}
+.about{
+    width: 55%;
+    float:left;
+    background-image: url("https://static.naukimg.com/s/4/110/i/1552719014_interview-skills.jpg");
+    padding: 80px;
+    margin-top: 2%;
+}
+.inner-section h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.text{
+font-size: 15px;
+color: #24324a;
+line-height: 30px;
+text-align: justify;
+margin-bottom: 40px;
+margin-left: 30px;
+}
+.skills button{
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+    width:200px;
+    background-color:#26AE61;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.skills button:hover{
+    transition: 2px;
+    background-color: #ecf5f5;
+    color: #00999c;
+}
+@media screen and (max-width:120px){
+    .inner-section{
+        padding: 80px;
+    }
+}
+@media screen and (max-width:400px) {
+    .about{
+        background-size: 100%;
+        padding: 60px 10px;
+    }
+    
+}
+.inner-section{
+    width:100%;
+}
+@media screen and (max-width:300px) {
+    .about{
+        padding: 0%;
+    }
+
+.inner-section{
+    padding: 50px;
+}
+.skills button{
+    font-size: 19px;
+    padding: 5px;
+    width: 160px;
+}
+}

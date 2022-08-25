@@ -1,0 +1,108 @@
+.div1{
+    width:80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #666;
+}
+.div1 h1{
+    align-items: center;
+    margin-left: 600px;
+    text-transform: uppercase;
+}
+.owl-theme{
+    width:100%;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border: none;
+    }
+.item{
+    border:none;
+    box-shadow: 1px 0px 0px 0px #000;
+    margin-left: 100px;
+    width:30%;
+    margin-top: 50px;
+   }
+   .item1{
+    border:none;
+    width:30%;
+    margin-top: 50px;
+
+   }
+.font-child{
+    width: 40%;
+    margin-left: 200px;
+    float:left;
+    margin-top: 10px;
+}
+.font{
+    width:100%;
+    display: flex;
+    
+}
+.font-child2{
+    width:100%;
+    float:right;
+    margin-right: 200px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.div3
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cards{
+    margin-left: 200px;
+}
+.owl-theme1{
+    display:block;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.container{
+    margin-left: 200px;
+    height:auto;
+    outline:auto;
+    width:100%;
+}
+.container1{
+    margin-left: 200px;
+    height:auto;
+    outline:auto;
+    width:20%;
+
+}
+.font-child1{
+    border: none;
+    outline: none;
+    box-shadow:none;
+    border-style: none;
+    margin-left: 300px;
+
+}
+.btn-light{
+    border: none;
+    border-style: none;
+}
+.Signheader{
+    width: 100%;
+    background-color: whitesmoke;
+    height:250px;
+    position: relative;  
+    background-image: url('https://preview.uideck.com/items/thehunt/assets/img/banner1.jpg');
+}
+.headertext{
+  position: absolute;
+  bottom: 20%;
+  right:40%;
+  font-size:x-large;
+  font-weight: 700;
+
+}

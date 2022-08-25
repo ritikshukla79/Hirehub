@@ -1,0 +1,50 @@
+
+<!-- 
+<p>showcandidates works!</p>
+
+{{emaill}}  {{idd | json}} -->
+
+<!-- <button id="btn3" routerLink="/appprofile" [queryParams]="{email: emaill, job_id: idd}"> View Profile </button> -->
+
+ <div class="joblistheader">
+    <p class="headertext">  Selected Candidate </p>
+</div>
+<div class="joblistbody">
+    <input type="search" placeholder="Keyword: Name, Skills" #namesk >
+    <input type="search" placeholder="Location: City,State" #locationsk>
+    <button id="btn1" (click)="searchnam(namesk.value, locationsk.value)"> Filter</button>
+</div>
+
+<div class="mainbody" *ngIf="accepted2.length==0">
+
+    <h3 style="text-align:center;">We have No Applicants Selected for this job yet</h3>
+  </div>
+<div *ngFor="let x of accepted2 ">
+<div class="mainbody">
+    <img  id ="companylogo" src="../../../../assets/default.png">
+    
+    <!-- <img  id ="companylogo" src="{{profileimage}}"> -->
+    <div class="companyname" routerLink="/jobdetails" >
+        <p style="font-weight:800 ; "> <b style="font-size: 1.2rem;" >{{x.jobseekername | uppercase}}</b><br/>
+            </p>    
+    </div>
+   
+        <button id="btn2" disabled> {{x.degree}}</button>
+        <div class="location">
+            <i class='fa-solid fa-location-dot' style='color: #26AE68;'></i> <span style="font-weight: 300;">{{x.address}} </span> &nbsp;
+           
+        </div>
+        <p id="duration"> {{x.grade}} %</p>
+        <button id="btn3" routerLink="/appprofile" [queryParams]="{email: x.email, job_id: idd}"> View Profile </button>
+
+    
+
+</div>  
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<div class="appliedjobheader">
+    <p class="headertext">  Your Applied Jobs </p>
+</div>
+
+<div class="mainbody" >
+ 
+  <div > 
+    <div class="card" style="width:70rem;height:8rem;" *ngFor="let x of appliedjob;">
+  
+        <img id ="companylogo" src="{{x.img_url}}">
+        <div class="companyname">
+            <p style="font-weight:800 ; " > <b style="font-size: 1.2rem; " > {{x.job_title}} </b><br/>
+              {{x.company}}</p>    
+        </div>
+      
+            <button id="btn2"> {{x.category}}</button>
+           
+            <div class="location">
+                <i class='fa-solid fa-location-dot' style='color: #26AE61;'></i> <span style="font-weight: 300;"> {{x.location}} </span> &nbsp;
+              
+            </div>
+            <!-- <p style="margin-left:57%;bottom: 80%; background-color: #26AE61; color: white; width:240px;">{{x.skills}}</p> -->
+            <p id="duration"> {{x.typeofjob}}  </p>
+            <div class="container">
+    
+                <div  class="primarybtn" *ngFor="let x of skills2">
+                  <button id="btnskill" style="background-color:#26AE61;color:#fff;margin-top: 15px; margin-left: 800px; display: flex;"> {{x}} </button>
+                </div>
+                  <div class="secondary">
+            <button id="btn3" style="color: orange;" > On Hold </button>
+            <button id="btn3" style="float:left;width:100px;padding:5px;margin-bottom:0px;" (click)="del(useremail,id1)">{{buttontext}}</button>
+                  </div>
+    
+    </div>
+    </div>
+</div>  
+
+</div>

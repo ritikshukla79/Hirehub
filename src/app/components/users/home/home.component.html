@@ -1,0 +1,320 @@
+<body style="width:100%">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="text_in_slide1">
+          <h1>
+            <p class="headertext">Find the career you<br> deserve</p>
+          </h1>
+          <p class="headertext1">Choose the career you always wanting and <br> waiting for go and follows up the links
+            deserve<br>
+          </p>
+          <button class="btn btn-lg see_more_job" (click)="see_more_jobs()">See more jobs</button>
+
+
+
+        </div>
+        <div style="margin-left:1075px;margin-top:8rem;">
+          <img src="../../../../assets/img-1.png" class="d-block w-40" alt="...">
+        </div>
+      </div>
+
+
+      <div class="carousel-item">
+        <div class="text_in_slide1">
+          <h1>
+            <p class="headertext">1000+ Jobs are <br>waiting for you</p>
+          </h1>
+          <p class="headertext2">Choose the career you always wanting and <br> waiting for go and follows up the links
+            deserve<br>
+          </p>
+          <button class="btn btn-lg see_more_job2" (click)="see_more_jobs()">See more jobs </button><br>
+          <button class="btn btn-lg create_account2" (click)="create_account()">Create Account</button>
+        </div>
+        <div style="margin-left:1075px;margin-top:8rem;">
+          <img src="../../../../assets/img-2.png" class="d-block w-40" alt="...">
+        </div>
+
+      </div>
+      <div class="carousel-item">
+        <div class="text_in_slide1">
+          <h1>
+            <p class="headertext">Post a job and hunt<br> for real talent</p>
+          </h1>
+          <p class="headertext1">Choose the career you always wanting and <br> waiting for go and follows up the links
+            deserve<br>
+          </p>
+          <button class="btn btn-lg post_job {{(!loggedIn==true)? 'disabled':''}}" (click)="see_more_jobs()"
+            *ngIf="role=='Employer'">Post Job</button>
+          <br><br>
+          <button class="btn btn-lg create_account" (click)="create_account()">Create Account</button>
+        </div>
+        <div style="margin-left:1075px;margin-top: 8rem;">
+          <img src="../../../../assets/img-3.png" class="d-block w-40" alt="...">
+        </div>
+
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- ================================================================================================================================= -->
+  <br>
+  <br>
+  <div id="apply">
+    <div class="container-fulid">
+      <div class="row" style="width:100.5%">
+        <div class="col-lg-6 col-md-12 col-xs-12 no-padding " *ngIf="loggedIn==false || role=='Admin'">
+          <div class="recruiter item-box">
+            <div class="content-inner">
+              <h5>I'm</h5>
+              <h3>Recruiter</h3>
+              <p>Post a job to tell us about your project. We'll quickly match you with <br> the right freelancers find
+                place best.</p>
+              <a *ngIf='loggedIn==false' routerLink="/signin" class="btn btn-border-filled ">Post a Job</a>
+
+            </div>
+            <div class="img-thumb">
+              <i class="fa fa-user " aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-xs-12 no-padding" *ngIf="loggedIn==false || role=='Admin'">
+          <div class="jobseeker item-box">
+            <div class="content-inner">
+              <h5>I'm</h5>
+              <h3>Jobseeker!</h3>
+              <p>Post a job to tell us about your project. We'll quickly match you with <br> the right freelancers find
+                place best.</p>
+              <a *ngIf='loggedIn==false' routerLink="/signin" class="btn btn-border-filled">Browser Jobs</a>
+            </div>
+            <div class="img-thumb">
+              <i class="fa fa-envira " aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="apply">
+    <div class="container-fulid">
+      <div class="row" style="width:100.5%">
+        <div class="col-lg-7 col-md-12 col-xs-12 no-padding " *ngIf="role=='Employer' ">
+          <div class="recruiter item-box">
+            <div class="content-inner">
+              <h5>I'm</h5>
+              <h3>Recruiter</h3>
+              <p>Post a job to tell us about your project. We'll quickly match you with <br> the right freelancers find
+                place best.</p>
+              <a routerLink="/addjob" class="btn btn-border-filled">Post a Job</a>
+            </div>
+            <div class="img-thumb">
+              <i class="fa fa-user " aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-12 col-xs-12 no-padding" *ngIf="role =='Job Seeker'">
+          <div class="jobseeker item-box">
+            <div class="content-inner">
+              <h5>I'm</h5>
+              <h3>Jobseeker!</h3>
+              <p>Post a job to tell us about your project. We'll quickly match you with <br> the right freelancers find
+                place best.</p>
+              <a routerLink="/joblist" class="btn btn-border-filled">Browser Jobs</a>
+            </div>
+            <div class="img-thumb">
+              <i class="fa fa-envira " aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- ================================================================================================================================ -->
+  <section class="category-section" *ngIf="role =='Job Seeker' || role=='Admin' && loggedIn==true">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Browse Categories</h2>
+        <br>
+        <p>Most popular categories of portal, sorted by popularity</p>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-xs-12 f-category">
+          <a routerLink="/joblist/Finance">
+            <div class="icon bg-color-1">
+              <i class="fa fa-home fa-2x" aria-hidden="true" style="color:whitesmoke;margin-top: 23%;"></i>
+            </div>
+            <h3>Finance</h3>
+            <p class="job_number">(1 jobs)</p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12 f-category">
+          <a routerLink="/joblist/Sales">
+            <div class="icon bg-color-2">
+              <i class="fa fa-globe fa-2x" aria-hidden="true" style="color:whitesmoke;margin-top: 23%;"></i>
+            </div>
+            <h3>Sales</h3>
+            <p class="job_number">(2 jobs)</p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12 f-category">
+          <a routerLink="/joblist/Education">
+            <div class="icon bg-color-3">
+              <i class="fa fa-book fa-2x" aria-hidden="true" style="color:whitesmoke;margin-top: 23%;"></i>
+            </div>
+            <h3>Education</h3>
+            <p class="job_number">(1 jobs)</p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12 f-category">
+          <a routerLink="/joblist/Technologies">
+            <div class="icon bg-color-4">
+              <i class="fa fa-television fa-2x" aria-hidden="true" style="color:whitesmoke;margin-top: 23%;"></i>
+            </div>
+            <h3>Technologies</h3>
+            <p class="job_number">(2 jobs)</p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12 f-category">
+          <a routerLink="/joblist/Design">
+            <div class="icon bg-color-5">
+              <i class="fa fa-brush fa-2x" aria-hidden="true" style="color:whitesmoke;margin-top: 23%;"></i>
+            </div>
+            <h3>Design</h3>
+            <p class="job_number">(1 jobs)</p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12 f-category">
+          <a routerLink="/joblist/Healthcare">
+            <div class="icon bg-color-6">
+              <i class="fa fa-heart fa-2x" aria-hidden="true" style="color:whitesmoke;margin-top: 23%;"></i>
+            </div>
+            <h3>Healthcare</h3>
+            <p class="job_number">(2 jobs)</p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12 f-category">
+          <a routerLink="/joblist/Science">
+            <div class="icon bg-color-7">
+              <i class="fa fa-flask fa-2x" aria-hidden="true" style="color:whitesmoke;margin-top: 23%;"></i>
+            </div>
+            <h3>Science</h3>
+            <p class="job_number">(0 jobs)</p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12 f-category">
+          <a routerLink="/joblist/Foodservices">
+            <div class="icon bg-color-8">
+              <i class="fa fa-cutlery fa-2x" aria-hidden="true" style="color:whitesmoke;margin-top: 23%;"></i>
+            </div>
+            <h3>Foodservices</h3>
+            <p class="job_number">(2 jobs)</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================================================================== -->
+  <section class="how-it-works section" style="padding: 60px 0 45px;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">How It Works?</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et <br> metus effici turac
+          fringilla lorem facilisis.</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="work-process">
+            <span class="process-icon">
+              <a routerLink="/signup"><i class="fa fa-user" style="color: #26ae61;"></i></a>
+
+            </span>
+            <h4>Create an Account</h4>
+            <p class="p-user">Post a job to tell us about your project. We'll quickly match you with the right
+              freelancers
+              find place best.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="work-process step-2">
+            <span class="process-icon">
+              <a routerLink="{{loggedIn==true?'/joblist':'/signin'}}"><i class="fa fa-search"
+                  style="color: #26ae61;"></i></a>
+            </span>
+            <h4>Search Jobs</h4>
+            <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers find place
+              best.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="work-process step-3">
+            <span class="process-icon">
+              <a routerLink="{{loggedIn==true?'/addjob':'/signin'}}"><i class="fa fa-trophy"
+                  style="color: #26ae61;"></i></a>
+            </span>
+            <h4>Apply</h4>
+            <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers find place
+              best.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <app-subscription-content *ngIf="role=='Employer'"></app-subscription-content>
+
+
+
+  <br>
+  <br>
+  <!-- ======================================================================================================================= -->
+  <div id="subscribe" class="section bg-cyan" style="background-image:url('../../../../assets/bg-1.jpg');">
+    <div class="container" style="max-width:960px;width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;--bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-xs-12">
+          <div class="subscribe-form">
+            <div class="form-wrapper">
+              <div class="sub-title">
+                <h3>Subscribe Our Newsletter</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et metus dolor sit
+                  amet,.</p>
+              </div>
+              <form [formGroup]="form">
+                <div class="row">
+                  <div class="col-12 form-line">
+                    <div class="form-group form-search">
+                      <input type="email" class="form-control" formControlName="email" name="email"
+                        placeholder="Enter Your Email">
+                      <button type="submit" class="btn btn-common btn-search"
+                        (click)="subscribe_button(form.value.email)">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-12">
+          <div class="img-sub">
+            <img class="img-fluid" src="../../../../assets/img-2.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

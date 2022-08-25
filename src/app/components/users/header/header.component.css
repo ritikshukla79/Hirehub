@@ -1,0 +1,115 @@
+header {
+  display: flex;
+  background-color: transparent;
+  height: 60px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+
+
+header.scrolled {
+  translate: 0px -30px;
+  box-shadow: 0 1px 7px rgb(0 0 0 / 6%);
+  background-color: white;
+  transform: translate(0px, 30px);
+  transition: transform 1s;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background: #e4e8eb;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: #1d8d4e;
+}
+
+.header-content {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  font-size: 30px;
+  vertical-align: middle;
+  font-family: sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  height: fit-content;
+  cursor: pointer;
+  color: white;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: transparent;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  /* border:1px solid red; */
+}
+
+.link-type1 {
+  margin: 0px 10px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #9a9a9a;
+  /* background-color: #f64c72; */
+}
+
+.link-type1.scrolled {
+  color: black;
+}
+
+.link-type1:hover {
+  color: #26ae61;
+}
+
+.link-type2 {
+  margin: 0px 10px;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px 18px;
+  border-radius: 20px;
+  color: white;
+  background-color: #26ae61;
+}
+
+.link-type2:hover {
+  background-color: #1d8d4e;
+}
+
+.link-type3 {
+  margin: 0px 10px;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px 18px;
+  border-radius: 20px;
+  color: white;
+  background-color: rgb(255, 79, 79);
+}
+
+.link-type3:hover {
+  background-color: rgb(255, 58, 58);
+}
+
+.profileImage {
+  margin: 0px 10px;
+  background-image: url("../../../../assets/profile-user.png");
+  width: 35px;
+  height: 35px;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.profileImage:hover {
+  background-image: url("../../../../assets/profile-user-dark.png");
+}

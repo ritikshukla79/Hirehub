@@ -1,0 +1,100 @@
+<div class="Signheader">
+    <p class="headertext"> Create your account </p>
+</div>
+<br><br><br>
+<div class="baner">
+    <br>
+    <h2 style="margin-left:13rem; margin-top :2rem;">Sign-Up</h2>
+    <form [formGroup]="form">
+        <br>
+        <div class="form-group">
+            <span class="class3"><i class="fa fa-user fa-fx class2" aria-hidden="true"></i></span>
+            <input type="username" id="username" class="form-control" formControlName="username" placeholder="Full name"
+                class="input-field" autocomplete="on">
+            <div style="color:red;margin-left: 80px;" *ngIf="username?.touched && username?.errors?.['required']">
+                <span>Name is
+                    required</span>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <span class="class3"><i class="fa fa-envelope fa-fx class2" aria-hidden="true"></i></span>
+            <input type="email" id="email" class="form-control" formControlName="email" placeholder="Email address"
+                class="input-field" autocomplete="on">
+            <div style="color:red;margin-left: 80px;" *ngIf="email?.touched && email?.errors?.['required']"><span>Email
+                    is
+                    required</span>
+            </div>
+            <div style="color:red;margin-left: 80px;" *ngIf="email?.touched && email?.errors?.['pattern']"><span>Enter a
+                    valid email address</span>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <span class="class3"><i class="fa fa-key fa-fw class2" aria-hidden="true"
+                    style="width: 0.8rem;;"></i></span>
+            <input type="password" id="password" class="form-control" formControlName="password" placeholder="Password"
+                class="input-field1" autocomplete="on" [type]="eye == false ? 'password' : 'text'">
+            <span class="showhide">
+                <span *ngIf="eye == false" (click)="showpass()"><i class="fa fa-eye-slash class2"
+                        aria-hidden="true"></i></span>
+                <span *ngIf="eye == true" (click)="showpass()" style="padding-right : 2px;"><i class="fa fa-eye class2"
+                        aria-hidden="true"></i></span>
+
+            </span>
+            <div style="color:red;margin-left: 80px;" *ngIf="password?.touched && password?.errors?.['required']">
+                <span>Password is
+                    required</span>
+            </div>
+            <div style="color:red;margin-left: 80px;" *ngIf="password?.touched && password?.errors?.['passwordcheck']">
+                <span>Password must contain Special character and should have minimum length 6</span>
+            </div>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <span class="class3"><i class="fa fa-mobile fa-fw class2" aria-hidden="true"
+                    style="width: 0.8rem;;"></i></span>
+            <input type="text" id="mobile" class="form-control" formControlName="mobile" placeholder="Phone No"
+                class="input-field" autocomplete="on">
+            <div style="color:red;margin-left: 80px;" *ngIf=" mobile?.touched && mobile?.errors?.['check']"><span>phone
+                    number invalid</span></div>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <span class="class3"><i class="fa fa-person fa-fw class2" aria-hidden="true"
+                    style="width: 0.8rem;;"></i></span>
+            <select id="userRole" class="form-control" formControlName="userRole" placeholder="Choose your role"
+                class="input-field" autocomplete="on">
+                <option value="" selected="selected" hidden="hidden">Choose your Role</option>
+                <option>Job Seeker</option>
+                <option>Employer</option>
+                <option>Admin</option>
+            </select>
+            <div style="color:red;margin-left: 80px;" *ngIf="userRole?.touched && userRole?.errors?.['required']">
+                <span>Role is
+                    required</span>
+            </div>
+
+        </div>
+        <br>
+        <a routerLink="/signin"><button type="button"
+                class="btn btn-class {{email?.status=='INVALID'|| password?.status=='INVALID' ?'disabled':''}}"
+                style=" width: 70%; height: 2.6rem; border-radius: 20px; padding-right: 0.8rem; margin-left:75px;background-color:#26AE61;color: white;"
+                (click)="submitdetails(form.value)">SignUp</button></a>
+
+        <br>
+        <br>
+
+        <a style="margin-left:9rem; color : rgb(146, 143, 143);">Already have an account ? <a routerLink="/signin"
+                style="color:#26AE61;">Sign in</a></a>
+        <br>
+        <br>
+    </form>
+
+</div>

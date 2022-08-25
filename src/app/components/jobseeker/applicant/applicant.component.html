@@ -1,0 +1,154 @@
+<div class="jobseekerdetails">
+  <p class="headertext">  Apply Now </p>
+
+</div>
+<div id="applynow_image">
+          <img src="/assets/applynow.png">
+        </div>
+<div class="main">
+<div class="baner">
+
+    <form [formGroup]="addJobseekerForm" class="shadow p-3 mb-3 bg-body rounded">
+      <p id="p1"> {{comp}} is hiring now!</p>
+      <div class="outer_div">
+        
+        
+            <div formGroupName="jobseeker_details">
+              <div class="form_div">
+
+              <div class="form-group">
+                <label for="jobseekername" class="form-label">Full Name <span style="color:red">*</span></label>
+                <input type="type" class="form-control" id="jobseekername" aria-describedby="emailHelp"
+                  formControlName="jobseekername" />
+                  <div *ngIf="jobseekername?.touched && jobseekername?.errors?.['required']"><span style="color:red"> Name is required </span>
+                    
+                  </div>  
+              </div>
+              <br>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="email" formControlName="email"  value="{{useremail}}" readonly="readonly"   />
+              </div>
+              <br>
+
+              <div class="form-group">
+                <label for="position" class="form-label"> Applying For<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="position" formControlName="position" value="{{jobtitle}}"  readonly="readonly"/>
+                
+              </div>
+              <br>
+
+
+              <div class="form-group">
+                <label for="address" class="form-label">Current location<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="" formControlName="address" placeholder=" eg. Noida,India" />  
+                <div *ngIf="address?.touched && address?.errors?.['required']"><span style="color:red"> Location is required </span>
+                    
+                </div>     
+              </div>  
+              <br>
+              
+              <div class="form-group">
+                <label for="education" class="form-label"> Education<span style="color:red">*</span></label>
+                <select name="education" class="form-select" id="education" formControlName="education" class="form-control" >
+                  <option value="Post Graduation">Post Graduation</option>
+                  <option value="Graduation">Graduation</option>
+                  <option value="higher secondary">12th</option>
+                  <option value="high school"> 10th </option>
+                  <option value="other">Other</option>
+
+                </select> 
+                <div *ngIf="education?.touched && education?.errors?.['required']"><span style="color:red"> Select Education  </span>
+                    
+                </div>       
+              </div> 
+              <br>
+
+              <div class="form-group">
+                <label for="college_name" class="form-label">College Name<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="college_name" formControlName="college_name"  placeholder="Enter College Name" /> 
+                <div *ngIf="college_name?.touched && college_name?.errors?.['required']"><span style="color:red"> College Name is required </span></div>     
+              </div>  
+              <br>
+              
+              <div class="form-group">
+                <label for="degree" class="form-label">Degree Name<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="" formControlName="degree"  placeholder=" eg. B.Tech"/>  
+                <div *ngIf="degree?.touched && degree?.errors?.['required']"><span style="color:red"> Degree is required </span>
+                    
+                </div>
+              </div> 
+              <br>
+
+              <div class="form-group">
+                <label for="grade" class="form-label">Grade/Percentage<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="grade" formControlName="grade" /> 
+                <div *ngIf="grade?.touched && grade?.errors?.['required']"><span style="color:red"> please enter Your current grade/percentage   </span>
+                    
+                </div>    
+              </div> 
+              <br>
+
+              <div class="form-group">
+                <label for="" >Skills<span style="color:red">*</span></label>
+                <div formArrayName="skills">
+                  <div class="toc flex flex-row justify-content-between mb-2"
+                    *ngFor="let toc of getControls(); let i = index">
+                    <div>
+                    <input [formControlName]="i" appearance="outlined" placeholder="eg. Python" class="form-control"/>
+                    </div>
+                  </div>
+                </div>
+              
+                <button type="button" id="skillbtn" style=" background-color:#26AE61 !important;" class="btn btn-primary" (click)="addtoc()" > Add new skill </button>
+                <div *ngIf="skills?.touched && skills?.errors?.['required']"><span style="color:red"> Please add atleast one skill </span>
+                    
+                </div>
+              </div>
+              <br>
+          
+              
+              <div class="form-group">
+                <label for="resume" class="form-label"> Add Resume/CV Link<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="resume" formControlName="resume" placeholder="Enter link"/>
+                <div *ngIf="resume?.touched && resume?.errors?.['required']"><span style="color: red;">Resume is required</span> </div>  
+              </div>
+              <br>
+
+                
+            </div>
+            </div>
+      </div>
+      <br>
+          
+
+      <div class="button_shift">
+        <button type="button" id="btn3" class="btn btn-primary {{jobseekername?.status=='INVALID' || address?.status=='INVALID' || education?.status=='INVALID' || college_name?.status=='INVALID' || degree?.status=='INVALID' || grade?.status=='INVALID' || skills?.status=='INVALID' || resume?.status=='INVALID'?'disabled':'' }}" 
+         data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="add(addJobseekerForm.value)"> Apply </button>
+        <br>
+  
+        <!-- Modal -->
+        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-centered ">
+            <div class="modal-content">
+              <div class="modal-body">
+                <video autoplay src="../../../../assets/modal-success-video.mp4" loop></video>
+                <h2> You have Applied Successfully. Wait! For Employer Response. </h2>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="link-signin" data-bs-dismiss="modal" routerLink="/joblist"> View More jobs
+                </button>
+                <button type="button" class="modal-close" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        END of MOdal-->
+   
+        </div>
+    </form>
+          
+</div>
+</div>

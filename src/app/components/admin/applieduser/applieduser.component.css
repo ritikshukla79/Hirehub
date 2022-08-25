@@ -1,0 +1,136 @@
+.appliedjobheader{
+    width: 100%;
+    background-color: whitesmoke;
+    height:200px;
+    position: relative;
+    background-image: url('https://preview.uideck.com/items/thehunt/assets/img/banner1.jpg');
+}
+::placeholder{
+    padding-left: 1rem;
+}
+.headertext{
+    position: absolute;
+    bottom: 20%;
+    right:47%;
+    font-size:x-large;
+    font-weight: 950;
+   
+
+}
+.joblistbody{
+    margin-top: 4rem;
+    margin-left: 22rem;
+   
+    
+}
+input{
+    width:450px;
+    height:50px;
+    border: 2px solid rgb(240, 240, 240);
+    border-radius: 4rem;
+
+}
+#locationsearch{
+    margin-left: 3rem;
+}
+button{
+    border-radius: 4rem;
+    color: white;
+    border: 1px solid whitesmoke;
+    background-color: #26AE61;
+}
+#btn1{
+    margin-left: 3rem;
+    width:110px;
+    height:50px;
+    opacity: 0.8;
+    
+}
+#btn1:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.mainbody{
+    margin-left: 22rem;
+    margin-top: 3rem;
+    width:60%;
+    background-color: white;
+    box-shadow: 7px 7px 7px 7px rgb(247, 243, 243);
+    height: 110px;
+    position: relative;
+}
+.card{
+    margin-top: 2rem;
+    border:none;
+    box-shadow: 10px 10px 10px 10px rgb(247, 243, 243);
+}
+#companylogo{
+    width: 100px;
+    height:70px;
+    position: absolute;
+    bottom: 15%;
+    margin-left: 2rem;
+}
+.companyname{
+    position: absolute;
+    margin-left: 10rem;
+    bottom: 15%;
+}
+.companyname:hover{
+    cursor: pointer;
+    color:  #26AE61;
+}
+#btn2{
+    margin-left: 25rem;
+    margin-top: 3rem;
+    width: 140px;
+}
+
+.location{
+   
+    position: absolute;
+    right: 37%;
+    bottom: 43%;
+}
+#duration{
+    right: 23%;
+    position: absolute;
+    bottom: 29%;
+    color:  #26AE61;
+}
+#btn3{
+   
+    position: absolute;
+    right:5%;
+    bottom: 37%;
+    width: 100px;
+    height:30px;
+    background-color:white;
+    color: #26AE61 ;
+    border: 1px solid;
+    text-align: center;
+    border-radius: 4rem;
+    
+
+}
+nav{
+    position: absolute;
+    left:18.7%;
+    top:120%;
+}
+
+a{
+    background-color:#26AE61 ;
+    color: white;
+    border: 1px solid whitesmoke;
+    border-radius: 2rem;
+    margin: 0.5rem;
+}
+.d-flex.justify-content-center.pag
+{
+    margin-top: 200px;
+    position: absolute;
+    bottom: 0%;
+    left:17%;
+    color: #24324a;
+}

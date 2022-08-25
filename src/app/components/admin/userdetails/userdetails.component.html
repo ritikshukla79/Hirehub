@@ -1,0 +1,54 @@
+<div class="Signheader">
+    <p class="headertext">user details</p>
+  </div>
+  
+  <br>
+  <div>
+  <table style="height:150px;overflow: scroll;" class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">S.No.</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col">Mobile_Number</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of jobseeker;let i=index" >
+        <td>{{i+1}}</td>
+        <td><a routerLink="/applied" [queryParams]="{email: x.email}">{{x.username}}</a></td>
+        <td>{{x.email}}</td>
+        <td>{{x.userRole}}</td>
+        <td>{{x.mobile}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div >
+  <table style="height:150px;overflow: scroll;" class="table table-striped">
+    <thead>
+      <tr>
+        <th>S.No.</th>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Mobile_Number</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of employee;let i=index" >
+        <td>{{i+1}}</td>
+        <td><a routerLink="/postedjobs" [queryParams]="{email: x.email}">{{x.username}}</a></td>
+        <td>{{x.email}}</td>
+        <td>{{x.userRole}}</td>
+        <td>{{x.mobile}}</td>
+      
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  

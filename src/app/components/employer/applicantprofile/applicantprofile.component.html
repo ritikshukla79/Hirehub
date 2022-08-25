@@ -1,0 +1,74 @@
+<div class="companydetails" >
+   
+   
+    <img *ngIf="isthereimage==0" id ="companylogo" src="../../../../assets/default.png">
+     <img *ngIf="isthereimage==1" id ="companylogo" src="{{profileimage}}">
+    
+    <div class="subdetails">
+        
+        <p style="display: block;font-weight: 700;font-size: 2rem;"> {{name | uppercase}} </p>
+        
+      <p id="mobile">
+        <i class='fas fa-phone' style="position: absolute;color: rgb(78, 210, 38)"><span style="color: black;">&nbsp;&nbsp;{{mobile}}
+     </span> </i> </p>
+
+        <p id="email">
+            <i class='fas fa-envelope' style="position: absolute;color: rgb(78, 210, 38)"><span style="color: black;">&nbsp;&nbsp;{{email | lowercase}} 
+            </span> </i>
+        </p>
+       
+        <!-- <div class="posting" style="opacity:0.8 ;">
+            <i class='fa-solid fa-location-dot' style='color: rgb(78, 210, 38)'></i> <span style="font-weight: 300;"> {{mobile}}</span> &nbsp;
+            <i class='fas fa-calendar' style='color: rgb(78, 210, 38)'></i> <span style="font-weight: 300;">Bangalore</span>
+   
+        </div> -->
+      
+    </div>
+    <div class="resume"> 
+        <div style="margin-top:20px;margin-top: 1.9rem;" (click)="download({resume}, 'abc.png');" >
+            View Resume
+        </div>
+    </div>
+
+</div>
+
+<div class="job-description" style="padding: 3rem;float:left;position: absolute;">
+    <h2 id="edudetail">Education Details       </h2>
+    <label style="font-weight: 500;display: block;position: absolute;margin-top: 35px;">Education</label>
+    <p style="font-weight: 300;margin-left:8rem;margin-top: 48px;"> {{edu}} </p>
+    <label style="font-weight: 500;display: block;position: absolute;">Degree</label>
+    <p style="font-weight: 300;margin-left:8rem;margin-top: 15px;">{{degree}} </p>
+    <label style="font-weight: 500;display: block;position: absolute;">Percentage</label>
+    <p style="font-weight: 300;margin-left:8rem;">{{grade}} %</p>
+    <label style="font-weight: 500;display: block;position: absolute;">College</label>
+   <p style="font-weight: 300;margin-left:8rem;">{{clg}} </p>
+   <div>
+   <button (click)="accept(email, {job_id})"   id="btnaccept"> <i class="fas fa-check"></i>Accept </button>
+   <!-- <button id="btnreject" data-bs-toggle="modal" data-bs-target="#exampleModal2" > <i class="fas fa-close"></i>&nbsp;Reject </button> -->
+   <button  (click)="reject(email, {job_id})" id="btnreject"><i class="fas fa-close"></i>&nbsp;Reject</button>
+</div>
+
+<div class="primary"> 
+    <p style="margin-top: 15px;font-weight: 500;font-size: 20px;position: absolute;">Skills</p>
+  <div class="container">
+    
+    <div *ngFor="let x of skills2">
+      <button id="btnskill" style="background-color: grey;margin-top: 15px;"> {{x}} </button>
+    </div>
+        
+  </div>
+
+</div>
+
+
+</div>
+<div>
+
+<img class="job-description2" src="{{resume}}">
+
+ 
+</div>
+
+
+
+ 

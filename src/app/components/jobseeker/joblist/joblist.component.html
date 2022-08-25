@@ -1,0 +1,38 @@
+<div class="joblistheader">
+    <p class="headertext">  Browse  More  Jobs </p>
+</div>
+<div class="joblistbody">
+      <input type="search" placeholder="Keyword: Name, Skills" #namesk id="namesearch" >
+      <input type="search" placeholder="Location: City,State" #locationsk id="locationsearch">
+      <button id="btn1" (click)="searchnam(namesk.value, locationsk.value)"> Filter</button>
+</div>
+<div class="mainbody" >
+ 
+  <div *ngFor="let x of joblist| paginate: {itemsPerPage: tablesize, currentPage: p, totalItems: count }"> 
+    <div class="card" style="width:70rem;height:8rem;">
+  
+        <img id ="companylogo" src="{{x.img_url}}">
+        <div class="companyname" routerLink="/jobdetails" [queryParams]="{job_id:x.job_id }">
+            <p style="font-weight:800 ; " > <b style="font-size: 1.2rem; " > {{x.job_title}} </b><br/>
+              {{x.company}}</p>    
+        </div>
+      
+            <button id="btn2"> {{x.ls_date}}</button>
+            <div class="location">
+                <i class='fa-solid fa-location-dot' style='color: #26AE61;'></i> <span style="font-weight: 300;"> {{x.location}}  </span> &nbsp;
+              
+            </div>
+            <p id="duration">{{x.typeofjob}}  </p>
+            <button id="btn3" routerLink="/applynow" [queryParams]="{job_id:x.job_id }"> Apply Now </button>
+    
+    </div>
+</div>  
+
+</div>
+
+<div class="d-flex justify-content-center pag">
+  <pagination-controls previousLabel="Prev" nextLabbel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div>
+
+
+

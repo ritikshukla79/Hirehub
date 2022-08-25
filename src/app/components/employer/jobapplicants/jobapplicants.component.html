@@ -1,0 +1,38 @@
+<div class="joblistheader">
+    <p class="headertext">  Browse  More  Jobs </p>
+</div>
+<div class="joblistbody">
+    <input type="search" placeholder="Keyword: Name" #namesk >
+    <input type="search" placeholder="Location: City" #locationsk>
+    <button id="btn1" (click)="searchnam(namesk.value, locationsk.value)"> Filter</button>
+</div>
+<div class="mainbody" *ngIf="accepted2.length==0">
+     <h4 style="text-align:center;">No Job Applicant Found!!</h4>
+</div>
+<div *ngFor="let x of accepted2 | paginate: {itemsPerPage: tablesize, currentPage: p, totalItems: count }">
+<div class="mainbody">
+    <img id ="companylogo" src="../../../../assets/default.png">
+    <div class="companyname" routerLink="/jobdetails" >
+        <p style="font-weight:800 ; "> <b style="font-size: 1.2rem;" >{{x.jobseekername}}</b><br/>
+            </p>    
+    </div>
+   
+        <button id="btn2" disabled> {{x.degree}}</button>
+        <div class="location">
+            <i class='fa-solid fa-location-dot' style='color: #26AE68'></i> <span style="font-weight: 300;">{{x.address}} </span> &nbsp;
+           
+        </div>
+        <p id="duration"> {{x.grade}} %</p>
+        <button id="btn3" routerLink="/appprofile" [queryParams]="{email: x.email, job_id: job_id}"> View Profile </button>
+
+    
+
+</div>  
+</div>
+
+<div class="justify-content-center pag">
+    <pagination-controls previousLabel="Prev" nextLabbel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>
+  </div>
+
+
+

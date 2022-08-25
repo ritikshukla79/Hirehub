@@ -1,0 +1,71 @@
+<div>
+    <img src="https://preview.uideck.com/items/thehunt/assets/img/banner1.jpg" style="width: 100%; height : 15rem;">
+</div>
+<br><br>
+<div class="baner">
+    <br>
+    <h2 style="margin-left:14.3rem; margin-top : 2rem;">Login</h2>
+    <form [formGroup]="form" #f="ngForm">
+        <br>
+        <div *ngIf="success == '0'">
+            <p style="color: red; margin-left: 6rem;;">Sorry!! your email id , password is invalid</p>
+        </div>
+
+        <div class="spinner-border text-success" role="status" style="margin-left : 15.5rem;;" *ngIf = "load == '1'">
+            <span class="sr-only">Loading...</span><br><br>
+          </div>    
+
+
+        <div class="form-group">
+
+            <span class="class3"><i class="fa fa-envelope class2" aria-hidden="true"></i></span>
+            <input type="email" id="email" class="form-control" formControlName="email" placeholder="Email address"
+                class="input-field" autocomplete="on">
+        </div>
+        <br>
+
+        <div class="form-group">
+            <span class="class3"><i class="fa fa-key fa-fw class2" aria-hidden="true"></i></span>
+            <input type="password" id="password" class="form-control" formControlName="password" placeholder="Password"
+                class="input-field1" autocomplete="on" [type]="eye == false ? 'password' : 'text'"
+                style="border-right: 0px;">
+            <span class="showhide">
+                <span *ngIf="eye == false" (click)="showpass()"><i class="fa fa-eye-slash class2"
+                        aria-hidden="true"></i></span>
+                <span *ngIf="eye == true" (click)="showpass()" style="padding-right : 2px;"><i class="fa fa-eye class2"
+                        aria-hidden="true"></i></span>
+
+            </span>
+        </div>
+
+ 
+
+        <!-- <button id="password_button" type="radio" matSuffix (click)="hide = !hide"
+                style="margin-top: 0.4rem;;">{{hide ? 'show' : 'hide'}}</button>
+
+ -->
+
+
+        <br>
+        <button type="button" class="btn-class" (click)="credentialsubmit(form.value); "
+            [disabled]="!f.valid">SignIn</button>
+        <br>
+
+        <!-- <a routerLink="forgetComp" (click)="func(form.value.email)"><b style="margin-left: 18rem;;">Forget password
+                ?</b></a> -->
+        <br>
+
+        <!-- <a routerLink="../forget" style="color : rgb(146, 143, 143); margin-left: 13.8rem;;">Reset Password</a> -->
+
+        
+        <a routerLink="../signup" style="margin-left:12.4rem; color : rgb(146, 143, 143);">Don't have an account?</a>
+        <br><br><br>
+
+    </form>
+
+</div>
+
+
+<!-- <button (click) = "func(form.value.email);">email</button> -->
+
+<br><br>

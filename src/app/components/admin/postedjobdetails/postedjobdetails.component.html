@@ -1,0 +1,50 @@
+
+<div class="joblistheader">
+  <p class="headertext">  Browse  More  Jobs </p>
+</div>
+<br>
+
+<p style="float:right;padding:3px;background-color:#24324a;color:#fff;margin-right:100px;border-radius: 20px;">{{myDate | date: 'yyyy-MM-dd' }}</p>
+
+<div class="joblistbody">
+  <input type="search" placeholder="Keyword: Name,Tag" id="keywordsearch">
+  <input type="search" placeholder="Location: City,State" id="locationsearch">
+  <button id="btn1"> Filter</button>
+</div>
+<div class="mainbody">
+
+<div *ngIf="arrmyjob.length==0">
+
+  <h3 style="text-align: center;margin-left: 0;">You have not Posted any job yet</h3>
+</div>
+<div *ngFor="let x of arrmyjob;" (keyup)="myjobs();"> 
+  <div class="card" style="width: auto;height:8rem;margin-left: -20rem;">
+  <img id ="companylogo" src="{{x.attributes.img_url}}">
+  <div class="companyname">
+      <p style="font-weight:800 ; "> <b style="font-size: 1.2rem; " >{{x.attributes.job_title}}</b><br/>
+        {{x.attributes.company}}</p>  
+       <div id="btn">
+        <span style="float:left;margin-left:600px; border:1px solid #000;padding:5px;background-color:#24324a; color:#fff; border-radius: 25px;"> 
+          {{x.attributes.ls_date}}</span>
+       </div>
+  </div>
+   <button id="btn2"> {{x.attributes.category}}</button>
+    <div id="duration">
+      <p style="font-weight: 400;margin-top: 45px;"> {{x.attributes.typeofjob}} <br/>  <i class='fa-solid fa-location-dot' style='color: rgb(78, 210, 38);'></i>{{x.location | uppercase}}</p>
+     
+    </div>
+      <p id="package"> {{x.attributes.package}} LPA</p>
+      <button id="btn3" routerLink="/applicant" [queryParams]="{category: x.attributes.category, job_id:x.attributes.job_id }"> View Applications </button>
+      <button id="viewapp"  routerLink="/selected" [queryParams]="{job_id:x.attributes.job_id }"> View selected Candidate </button>
+      <button style="float:left;width:100px;padding:5px;margin-left:1500px; margin-bottom:0px;color: red; background-color: #fff;border-color: red;" (click)="del(x.attributes.ls_date,x.id)"><i class="fa-solid fa-trash-can"></i>
+    </button>
+
+</div>  
+
+</div>
+
+</div>
+
+<div class="d-flex justify-content-center pag">
+  <pagination-controls previousLabel="Prev" nextLabbel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div>

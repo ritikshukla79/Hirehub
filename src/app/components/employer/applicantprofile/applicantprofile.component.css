@@ -1,0 +1,199 @@
+.companydetails {
+    width: auto;
+    background-color: whitesmoke;
+    height: 300px;
+    position: relative;
+    background-image: url('https://preview.uideck.com/items/thehunt/assets/img/banner1.jpg');
+
+}
+
+#mobile {
+    float: left;
+    position: absolute;
+    margin-left: 19rem;
+    font-weight: 500;
+    margin-top: 1.7rem;
+}
+
+#email {
+    float: left;
+    position: absolute;
+    margin-left: 36rem;
+    margin-top: 1.7rem;
+}
+
+.subdetails {
+    margin-left: 27rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 5%;
+}
+
+.resume {
+    position: absolute;
+    top: 61%;
+    right: 16%;
+    background-color: rgb(78, 210, 38);
+    width: 120px;
+    height: 90px;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+
+}
+
+/* label{
+    font-weight: 550;display: block;margin-top: 30px;
+} */
+
+.det {
+    font-weight: 300;
+    margin-left: 8rem;
+    margin-top: 20px;
+}
+
+#edudetail {
+    margin-top: 40px;
+    margin-left: 50px;
+    color: #26AE61;
+    text-decoration: underline;
+}
+
+#companylogo {
+    width: 15%;
+    height: 50%;
+    left: 8%;
+    position: absolute;
+    border-radius: 50%;
+    top: 200px;
+
+}
+
+#companylogo:hover{
+    width: 17%;
+    height:50%;
+}
+
+.job-description {
+    margin-top: 2rem;
+
+    width: 35%;
+    height: 550px;
+    position: absolute;
+    left: 17%;
+    box-shadow: 10px 10px 10px 10px whitesmoke;
+
+}
+
+.job-description2 {
+    margin-top: 2rem;
+    margin-left: 70rem;
+    width: 27%;
+    height: 550px;
+    position: absolute;
+    float: left;
+    box-shadow: 10px 10px whitesmoke;
+
+}
+
+#btn1 {
+    position: absolute;
+    bottom: 60px;
+    margin-left: 2rem;
+    background-color: #26AE61;
+    color: white;
+    border: 1px solid whitesmoke;
+    border-radius: 5rem;
+    width: 120px;
+    height: 50px;
+
+
+}
+
+#btnhold {
+    position: absolute;
+    bottom: 20px;
+    margin-left: 2rem;
+    background-color: rgb(78, 210, 38);
+    color: white;
+    border: 1px solid whitesmoke;
+    border-radius: 5rem;
+    width: 120px;
+    height: 50px;
+    background-color: blue;
+    width: auto;
+    position: absolute;
+    float: left;
+    margin-left: 280px;
+}
+
+#btnreject {
+    position: absolute;
+    bottom: 60px;
+    margin-left: 2rem;
+    background-color: rgb(78, 210, 38);
+    color: white;
+    border: 1px solid whitesmoke;
+    border-radius: 5rem;
+    width: 120px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    float: left;
+    margin-left: 280px;
+}
+
+#btnaccept {
+    position: absolute;
+    bottom: 60px;
+    margin-left: 2rem;
+    background-color: rgb(78, 210, 38);
+    color: white;
+    border: 1px solid whitesmoke;
+    border-radius: 5rem;
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    float: left;
+    margin-left: 0px;
+}
+
+
+
+#btnskill {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    color: white;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    width: auto;
+    height: 40px;
+    padding-left: 17px;
+    padding-top: 7px;
+   
+    margin-left: 1ex;
+    margin-top: 5px;
+
+
+}
+
+.primary {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container {
+    margin-left: 110px;
+    display: flex;
+
+}
+
+button {
+    opacity: 0.8;
+}
+
+button:hover {
+    opacity: 1;
+}

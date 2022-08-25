@@ -1,0 +1,187 @@
+
+
+
+<div class="companydetails">
+  <p class="headertext">  Add New  Jobs </p>  
+</div>  
+
+
+
+
+
+<div style="width:50rem;margin-left: 28%;margin-right: 30%;padding: 20px;margin-top:40px;">
+  
+      <div class="modal-body" class="shadow p-5 mb-5 bg-body rounded;">
+        <ul class="">
+          <li class="nav-item">
+              <a class="nav-link" style="display: none;" [class.active]="tabss =='jdetails'" 
+                  (click)="tabss= 'jdetails'">Job Details</a>
+        
+          </li>
+        
+          <li class="nav-item" style="margin-left: 20rem; position:relative;display: none;">
+              <a class="nav-link" [class.active]="tabss =='cdetails'">Company Details</a>
+        
+          </li>
+        
+         
+        
+        </ul>
+        
+        
+        <div [ngSwitch]="tabss">
+       
+        <form [formGroup]="addJobForm">
+          <div *ngSwitchCase="'jdetails'">
+          <div formGroupName="job_details"> 
+            <div class="mb-3">
+              <!-- <label for="jobname" class="form-label">Job_Id</label>
+               -->
+               <h3 id="head">Job Details</h3>
+              <input type="hidden" class="form-control" id="job_id" value="{{job_id}}" aria-describedby="emailHelp"
+                formControlName="job_id" readonly="readonly" />
+            </div> 
+
+
+            <!-- <div class="mb-3">
+              <label for="empemail" class="form-label">Email</label>
+               -->
+              <input type="hidden" class="form-control" id="empemail"  value="{{myemail}}" (focus)="fillemail();"
+                formControlName="empemail"  />
+            <!-- </div> -->
+
+            <div class="mb-3">
+              <label for="jobname" class="form-label">Job Title</label>
+              <input type="type" class="form-control" id="jobname" aria-describedby="emailHelp"
+                formControlName="job_title" />
+            </div>
+  
+            <div class="mb-3">
+              <label for="company" class="form-label">Company</label>
+              <input type="text" class="form-control" id="company" formControlName="company" />
+            </div>
+  
+          
+            <div class="mb-3">
+              <label for="desc" class="form-label">Job Description</label>
+              <textarea rows="5"  class="form-control" id="desc" formControlName="desc"></textarea>
+            </div>
+  
+            <div class="mb-3">
+              <label for="courseCategory" class="form-label">Type of job</label>
+              <select name="courseCategory" class="form-select" id="" formControlName="typeofjob">
+                <option value="fulltime">Full Time</option>
+                <option value="parttime">Part Time</option>
+  
+              </select>
+            </div>
+  
+            <div class="mb-3">
+              <label for="package" class="form-label">Package (IN LPA)</label>
+              <input type="number" class="form-control" id="package" aria-describedby="emailHelp"
+                formControlName="package" />
+            </div>
+            <div class="mb-3">
+                <label for="expiry" class="form-label">Expiration Date</label>
+                <input type="date" class="form-control" id="expiry" formControlName="ls_date" />
+              </div>
+    
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select name="category" class="form-select" id="" formControlName="category">
+                <option value="Finance">Finance</option>
+                <option value="Sales">Sales/Marketing</option>
+                <option value="Technologies">Technologies</option>
+               
+                <option value="Education">Education/Training</option>
+                <option value="Design">Designing</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Science">Science</option>
+                <option value="FoodServices">Food Services</option>
+              </select>
+            </div>  
+
+
+  
+  
+            <div class="mb-3">
+              <label for="location" class="form-label">Location</label>
+              <select name="location" class="form-select" id="" formControlName="location">
+                <option value="bangalore">Bangalore</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="noida">Noida</option>
+                <option value="chennai">Chennai</option>
+                <option value="wfh">Work from home</option>
+  
+              </select>   
+            </div>  
+
+            <div class="mb-3">
+              <label for="" >Skills</label>
+            </div>
+        
+            <div formArrayName="reqskills">
+              <div class="toc flex flex-row justify-content-between mb-2"
+                *ngFor="let toc of getControls(); let i = index">
+                <div>
+                <input  [formControlName]="i" class="skillarr" placeholder="Add Skills"  style="width: 100%;"/>
+                </div>
+                </div>
+           
+                <div  style="display: flex;">
+                  <button  type="button" class="add"  (click)="addtoc()"> <b><i class="fas fa-plus"></i></b> </button>
+                </div>
+             
+               
+                <!-- <div class="remove-toc">
+                  <button type="button" (click)="removetoc(i)" class="btn btn-dark">
+                    X
+                  </button> 
+                </div>  -->
+              
+              <button class="nx" [disabled]="!addJobForm.get('job_details')?.['valid']"
+              (click)="method();">Next</button>
+              </div>
+          
+
+          </div>
+          </div>
+          <div *ngSwitchCase="'cdetails'">
+          <h3>Company Details</h3>
+          <div formGroupName="company_details">
+            <div class="mb-3">
+              <label for="company_name" class="form-label">Company Name</label>
+              <input type="text" class="form-control" id="company_name" formControlName="company_name" />
+            </div>
+  
+            <div class="mb-3">
+              <label for="weburl" class="form-label">Website url</label>
+              <input type="text" class="form-control" id="weburl" formControlName="web_url" />
+            </div>
+  
+            <div class="mb-3">
+              <label for="tagline" class="form-label">Tagline</label>
+              <input type="text" class="form-control" id="tagline" formControlName="tagline" />
+            </div>
+  
+  
+            <div class="mb-3">
+              <label for="imgurl" class="form-label">Image url</label>
+              <input type="text" class="form-control" id="imgurl" formControlName="img_url" />
+            </div>
+            <button type="button"  (click)="add(addJobForm.value);" id="addjob" >Add Job</button>
+
+  
+          </div>
+          </div>
+  
+  
+        </form>
+        </div>
+      </div>
+  
+  
+  </div>
+
+
+ 

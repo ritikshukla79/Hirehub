@@ -1,0 +1,115 @@
+<div class="subscription {{ showModal ? 'modal-open' : '' }}">
+  <div class="content-wrapper">
+    <div class="content">
+      <div class="header">Pricing Plan</div>
+      <div class="text-wrap">
+        <div class="text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et metus effici turac
+          fringilla lorem facilisis.
+        </div>
+      </div>
+      <div class="cards">
+        <div *ngIf="subscriptionType === 'Professional'" class="card" style="border-top: 4px solid #26ae61">
+          <div class="card-body">
+            <div class="card-icon">
+              <img src="assets/rocket.png" class="card-img" alt="..." />
+            </div>
+            <h5 class="card-title">Professional</h5>
+            <p class="card-text">
+              Post 10 Job<br />
+              No Featured Job<br />
+              Edit Your Job Listing<br />
+              Manage Application <br />30-day Expired
+            </p>
+            <div class="card-price">
+              <sub style="font-size: 20px; font-weight: 400">Rs.</sub>{{ this.discountedPrice
+              }}<sub style="font-size: 20px; font-weight: 400">/month</sub>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="subscriptionType === 'Advance'" class="card" style="border-top: 4px solid red">
+          <div class="card-body">
+            <div class="card-icon">
+              <img src="assets/drop-of-liquid.png" class="card-img" alt="..." />
+            </div>
+            <h5 class="card-title">Advance</h5>
+            <p class="card-text">
+              Post 20 Job<br />
+              No Featured Job<br />
+              Edit Your Job Listing<br />
+              Manage Application <br />30-day Expired
+            </p>
+            <div class="card-price">
+              <sub style="font-size: 20px; font-weight: 400">Rs.</sub>{{ this.discountedPrice
+              }}<sub style="font-size: 20px; font-weight: 400">/month</sub>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="subscriptionType === 'Premium'" class="card" style="border-top: 4px solid blue">
+          <div class="card-body">
+            <div class="card-icon">
+              <img src="assets/suitcase.png" class="card-img" alt="..." />
+            </div>
+            <h5 class="card-title">Premium</h5>
+            <p class="card-text">
+              Post 40 Job<br />
+              No Featured Job<br />
+              Edit Your Job Listing<br />
+              Manage Application <br />30-day Expired
+            </p>
+            <div class="card-price">
+              <sub style="font-size: 20px; font-weight: 400">Rs.</sub>{{ this.discountedPrice
+              }}<sub style="font-size: 20px; font-weight: 400">/month</sub>
+            </div>
+          </div>
+        </div>
+
+        <div class="details">
+          <h3>Subscription Details</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              margin: 40px 0px;
+              margin-bottom: 190px;
+            "
+          >
+            <label>Apply coupon</label>
+            <select class="form-select" #c (change)="onCouponChange(c.value)">
+              <option [value]="coupon.couponName" *ngFor="let coupon of couponArray">{{ coupon.couponName }}</option>
+            </select>
+          </div>
+
+          <div>
+            <div style="font-size: 16px; padding: 10px 0px">Total Price: Rs.{{ this.discountedPrice }}</div>
+            <div class="buy-btn" (click)="buyNowBtnHandler()" >Buy now</div>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">success</h4>
+                    <button type="button" class="btn-close" data-dismiss="modal" (click)="hide()"></button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">content</div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="hide()">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

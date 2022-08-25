@@ -1,0 +1,63 @@
+<header class="header {{ headerScrolled }}" *ngIf="loading">
+  <mat-progress-bar style="width: 80%" mode="indeterminate"></mat-progress-bar>
+</header>
+
+<header class="header {{ headerScrolled }}" *ngIf="loggedIn === false && !loading">
+  <div class="header-content">
+    <div class="logo" routerLink="">
+      <div class="header-logo" style="color: #26ae61; margin-left: 10px; font-weight: bold; font-size: 20px">
+        HireHub
+      </div>
+    </div>
+
+    <div class="nav-link">
+      <div class="link-type1 {{ headerScrolled }}" routerLink="about">About</div>
+      <div class="link-type1 {{ headerScrolled }}" routerLink="contact">Contact</div>
+      <div id="signin" class="link-type1 {{ headerScrolled }}" routerLink="signin">Sign In</div>
+    </div>
+  </div>
+</header>
+
+<header class="header {{ headerScrolled }}" *ngIf="loggedIn === true && !loading && role != ''">
+  <div class="header-content">
+    <div class="logo" routerLink="">
+      <div class="header-logo" style="color: #26ae61; margin-left: 10px; font-weight: bold; font-size: 20px">
+        HireHub
+      </div>
+    </div>
+
+    <div class="nav-link" *ngIf="role == 'Employer'">
+      <div class="link-type3 {{ headerScrolled }}" routerLink="subscription">
+        {{ haveSubscription ? "Upgrade Plan" : "Get Subscription" }}
+      </div>
+
+      <div class="link-type1 {{ headerScrolled }}" routerLink="myjob">My Jobs</div>
+      <div class="link-type1 {{ headerScrolled }}" routerLink="addjob">Add Job</div>
+      <div class="profileImage" routerLink="profile"></div>
+
+      <div style="display: flex">
+        <div class="link-type2" (click)="logoutBtnHandler()" routerLink="">Logout</div>
+      </div>
+    </div>
+
+    <div class="nav-link" *ngIf="role == 'Job Seeker'">
+      <div class="link-type1 {{ headerScrolled }}" routerLink="joblist">Jobs</div>
+      <div class="link-type1 {{ headerScrolled }}" routerLink="appliedjobs">Applied Jobs</div>
+      <div class="profileImage" routerLink="profile"></div>
+      <div style="display: flex">
+        <div class="link-type2" (click)="logoutBtnHandler()" routerLink="">Logout</div>
+      </div>
+    </div>
+
+    <div class="nav-link" *ngIf="role == 'Admin'">
+      <div class="link-type1 {{ headerScrolled }}" routerLink="userdetails">User Details</div>
+      <div class="link-type1 {{ headerScrolled }}" routerLink="alljobs">All Jobs</div>
+      <div class="link-type1 {{ headerScrolled }}" routerLink="myjob">Posted Jobs</div>
+      <div class="link-type1 {{ headerScrolled }}" routerLink="appliedjobs">Applied Jobs</div>
+      <div class="profileImage" routerLink="profile"></div>
+      <div style="display: flex">
+        <div class="link-type2" (click)="logoutBtnHandler()" routerLink="">Log-Out</div>
+      </div>
+    </div>
+  </div>
+</header>
